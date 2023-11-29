@@ -1,0 +1,63 @@
+﻿﻿
+@model List<Author>
+
+@{
+    int count = 0;
+}
+<div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Authors Table</h4>
+@*                 @Html.Raw(TempData["Message"])
+ *@                <a asp-controller="author" asp-action="create" class="btn btn-success">Create New Author</a>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>
+                                    No
+                                </th>
+                                <th>
+                                    Name
+                                </th>
+                                <th>
+                                    Surname
+                                </th>
+                                <th>
+                                    Settings
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (Author author in Model)
+                            {
+                                count++;
+                                <tr>
+
+                                    <td>
+                                        @count
+                                    </td>
+                                    <td>
+                                        @author.Name
+                                    </td>
+                                    <td>
+                                        @author.Surname
+                                    </td>
+                                    <td>
+                                        <a asp-action="update" asp-controller="author" asp-route-id="@author.Id" class="btn btn-warning btn-info"><i class="mdi mdi-pencil"></i></a>
+                                        <a asp-action="delete" asp-controller="author" asp-route-id="@author.Id" class="btn btn-danger btn-info"><i class="mdi mdi-delete"></i></a>
+                                        <a asp-action="details" asp-controller="author" asp-route-id="@author.Id" class="btn btn-success btn-info"><i class="mdi mdi-open-in-new"></i></a>
+                                    </td>
+                                    <td>
+                                    </td>
+
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

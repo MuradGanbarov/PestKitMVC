@@ -1,0 +1,26 @@
+﻿﻿
+@model Author
+
+<div class="container">
+    <div class="row">
+
+        @foreach(Blog blog in Model.Blogs)
+        {
+            <div class=".table-striped">
+                <div class="col-xl-3 col-md-4 col-sm-6">
+                    <div class="card" style="width: 20rem;">
+                        <img class="primary-img"
+                             src="~/assets/images/product/@blog."
+                             alt="Product Images" />
+                        <div class="card-body">
+                            <h5 class="card-title">@blog.</h5>
+                            <p class="card-text">@blog.Description</p>
+                            <a asp-action="Index" asp-controller="color" class="btn btn-primary">Go Back</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>

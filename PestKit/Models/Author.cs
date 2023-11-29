@@ -9,6 +9,6 @@ namespace PestKit.Models
         [MaxLength(25, ErrorMessage = "Uzunluqu 25 xarakterden chox olmamalidir")]
         public string Name { get; set; }
         public string Surname { get; set; }
-        public List<Blog> Blogs { get; set; }
+        public List<Blog>? Blogs { get; set; }
     }
 }

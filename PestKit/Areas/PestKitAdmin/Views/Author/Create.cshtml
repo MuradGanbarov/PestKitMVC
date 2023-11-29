@@ -1,0 +1,43 @@
+﻿@using PestKit.Areas.PestKitAdmin.ViewModels;
+
+@model CreateAuthorVM
+<div class="row">
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Create New Blog</h4>
+                @Html.Raw(TempData["Message"])
+                <form class="forms-sample" method="post" enctype="multipart/form-data">
+           @*          <div class="form-group">
+                        <label asp-for="MainPhoto">Main Image</label>
+                        <input asp-for="MainPhoto" class="form-control" accept="image/*">
+                        <span class="text-danger" asp-validation-for="MainPhoto"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="HoverPhoto">Hover Image</label>
+                        <input asp-for="HoverPhoto" class="form-control">
+                        <span class="text-danger" asp-validation-for="HoverPhoto" accept="image/*"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Photos">Additional Images</label>
+                        <input asp-for="Photos" class="form-control">
+                        <span class="text-danger" asp-validation-for="Photos" accept="image/*"></span>
+                    </div>
+            *@         <div class="form-group">
+                        <label asp-for="Name">Name</label>
+                        <input asp-for="Name" class="form-control" placeholder="Name">
+                        <span class="text-danger" asp-validation-for="Name"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Name">Surname</label>
+                        <input asp-for="Surname" class="form-control" placeholder="Surname">
+                        <span class="text-danger" asp-validation-for="Surname"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary me-2">Submit</button>
+                    <a asp-action="index" asp-controller="author" class="btn btn-light">Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<

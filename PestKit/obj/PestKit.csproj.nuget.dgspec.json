@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Murad\\Desktop\\Task_Interface_Static\\PestKit\\PestKit\\PestKit.csproj": {}
+    "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\PestKit.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Murad\\Desktop\\Task_Interface_Static\\PestKit\\PestKit\\PestKit.csproj": {
+    "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\PestKit.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Murad\\Desktop\\Task_Interface_Static\\PestKit\\PestKit\\PestKit.csproj",
+        "projectUniqueName": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\PestKit.csproj",
         "projectName": "PestKit",
-        "projectPath": "C:\\Users\\Murad\\Desktop\\Task_Interface_Static\\PestKit\\PestKit\\PestKit.csproj",
+        "projectPath": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\PestKit.csproj",
         "packagesPath": "C:\\Users\\Murad\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Murad\\Desktop\\Task_Interface_Static\\PestKit\\PestKit\\obj\\",
+        "outputPath": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Murad\\AppData\\Roaming\\NuGet\\NuGet.Config",

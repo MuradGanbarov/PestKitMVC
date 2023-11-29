@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jiUzr+Ah3Me3pS55nVYGp1hs3LLuEXVd0+g28nRMyoJ729lZNq+xq9F/iXdHbrmymazFLTrN/uJeKEdMY12Gcg==",
+  "dgSpecHash": "lrmrMCNR2Z4G4SWmiz0470RNLE9anjM3GkrE+1ts+og+VnFLGBq4YAms4uAkJMDistwm1gdLrZ8G2byhmUbm2g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Murad\\Desktop\\Task_Interface_Static\\PestKit\\PestKit\\PestKit.csproj",
+  "projectFilePath": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\PestKit.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Murad\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Murad\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
