@@ -8,7 +8,8 @@ namespace PestKit.Areas.PestKitAdmin.ViewModels
         public string Name { get; set; }
         [Required]
         public IFormFile MainPhoto { get; set; }
+        public string? Alternative { get; set; }
         [Required]
-        public IFormFile SecondaryPhoto { get; set; }
+        public List<IFormFile>? SecondaryPhoto { get; set; }
     }
 }

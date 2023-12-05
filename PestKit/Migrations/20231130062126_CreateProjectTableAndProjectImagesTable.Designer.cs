@@ -12,8 +12,8 @@ using PestKit.DAL;
 namespace PestKit.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231129092608_CreateProjectsTable")]
-    partial class CreateProjectsTable
+    [Migration("20231130062126_CreateProjectTableAndProjectImagesTable")]
+    partial class CreateProjectTableAndProjectImagesTable
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -234,10 +234,9 @@ namespace PestKit.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Alternative")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("IsPrimary")
+                    b.Property<bool?>("IsPrimary")
                         .HasColumnType("bit");
 
                     b.Property<int>("ProjectId")

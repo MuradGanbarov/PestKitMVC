@@ -24,7 +24,7 @@ namespace PestKit.Areas.PestKitAdmin.Controllers
             return View(authors);
         }
 
-        
+
 
         public IActionResult Create()
         {
@@ -43,14 +43,14 @@ namespace PestKit.Areas.PestKitAdmin.Controllers
             TempData["Message"] = "";
             if (!ModelState.IsValid) return View();
 
-            bool IsExist = await _context.Authors.AnyAsync(a=>a.Name.Trim().ToLower() == authorVM.Name.Trim().ToLower());
-            if(IsExist)
+            bool IsExist = await _context.Authors.AnyAsync(a => a.Name.Trim().ToLower() == authorVM.Name.Trim().ToLower());
+            if (IsExist)
             {
                 ModelState.AddModelError("Author", "Bele bir author hal hazirda var");
                 TempData["Message"] += $"<p class=\"text-danger\">\n{author.Name},{author.Surname}: Bele bir author hal hazirda var</p>";
                 return View();
             }
-            
+
 
 
             await _context.Authors.AddAsync(author);
@@ -58,6 +58,57 @@ namespace PestKit.Areas.PestKitAdmin.Controllers
             return RedirectToAction(nameof(Index));
 
         }
+
+
+        public async Task<IActionResult> Delete(int id)
+        {
+            if (id <= 0) return NotFound();
+            Author existed = await _context.Authors.FirstOrDefaultAsync(a => a.Id == id);
+            if( existed is null) return NotFound();
+            _context.Authors.Remove(existed);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+        public async Task<IActionResult> Update(int id)
+        {
+            if(id <= 0) return NotFound();
+            Author author = await _context.Authors.FirstOrDefaultAsync(a=>a.Id == id);
+            UpdateAuthorVM updateVM = new UpdateAuthorVM()
+            {
+                Name = author.Name,
+            };
+
+            if (author is null) return BadRequest();
+
+            return View(updateVM);
+        }
+
+        [HttpPost]
+
+        public async Task<IActionResult> Update(int id, UpdateAuthorVM updateVM)
+        {
+            if (ModelState.IsValid)
+            {
+                return View();
+            }
+
+            Author exist = await _context.Authors.FirstOrDefaultAsync(a => a.Id == id);
+    
+            if(exist is null) return NotFound();
+            if(exist.Name == updateVM.Name)
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            
+
+            exist.Name = updateVM.Name;
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index)); 
+
+
+        }
+
 
         public async Task<List<Author>> GetAuthorAsync()
         {

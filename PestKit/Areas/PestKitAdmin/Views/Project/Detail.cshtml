@@ -1,0 +1,17 @@
+﻿@model Project
+
+<div class="col">
+    <div class="card w-25">
+        <img src="~/img/@Model.ProjectImages.FirstOrDefault(pi=>pi.IsPrimary==true)?.URL" class="card-img-top" alt="@Model.Name">
+    </div>
+    @foreach(ProjectImages project in Model.ProjectImages.Where(pi=>pi.IsPrimary==null))
+    {
+        <div class="card w-25">
+            <img src="~/img/@project.URL" class="card-img-top" alt="@project.Alternative">
+        </div>
+    }
+    <div class="card-body">
+        <h5 class="card-title">@Model.Name</h5>
+        
+    </div>
+</div>

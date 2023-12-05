@@ -1,0 +1,70 @@
+﻿@using PestKit.Areas.PestKitAdmin.ViewModels;
+
+@model UpdateProjectVM
+
+
+<div class="row">
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Update Project</h4>
+                <form class="forms-sample" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label asp-for="Name">Name</label>
+                        <input asp-for="Name" class="form-control" placeholder="Name">
+                        <span class="text-danger" asp-validation-for="Name"></span>
+                    </div>
+                    <div class="form-group">
+                        <img style="width:200px;height:200px" src="~/img/@Model.ProjectImages.FirstOrDefault(pi=>pi.IsPrimary==true)?.URL" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="MainPhoto">Main Image</label>
+                        <input asp-for="MainPhoto" class="form-control" accept="image/*" />
+                        <span class="text-danger" asp-validation-for="MainPhoto"></span>
+                    </div>
+                        <input asp-for="ProjectImages" type="hidden"/>
+                        <input asp-for="MainPhoto" type="hidden"/>
+                        <input asp-for="SecondaryPhoto" type="hidden"/>
+                   
+                    <div class="form-group d-flex">
+
+                        @foreach (ProjectImages image in Model.ProjectImages.Where(pi => pi.IsPrimary == null))
+                        {
+                            <div class="position-relative">
+                                <img style="width:150px;height:150px" src="~/img/@image.URL" />
+                                <button style="right:5px;top:5px" class="cus-button btn btn-danger position-absolute">X</button>
+                                <input asp-for="ImageIds" type="hidden" value="@image.Id">
+                            </div>
+                        }
+
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="SecondaryPhoto">Additional images</label>
+                        <input asp-for="SecondaryPhoto" class="form-control" accept="image/*" />
+                        <span class="text-danger" asp-validation-for="SecondaryPhoto"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Name">Name</label>
+                        <input asp-for="Name" class="form-control" placeholder="Name" alt="@Model.Alternative">
+                        <span class="text-danger" asp-validation-for="Name"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary me-2">Submit</button>
+                    <a asp-action="index" asp-controller="Index" class="btn btn-light">Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section DeleteImages{
+    <script>
+        var btns = document.querySelectorAll(".cus-button")
+
+        for (let i = 0; i <= btns.length; i++) {
+            btns[i].addEventListener("click", function () {
+                btns[i].parentElement.remove()
+            })
+        }
+    </script>
+}
