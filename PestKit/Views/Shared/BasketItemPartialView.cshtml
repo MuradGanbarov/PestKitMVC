@@ -1,0 +1,19 @@
+﻿@using PestKit.ViewModels;
+@model List<BasketItemVM>
+
+@{
+    decimal? total = 0;
+}
+<ul class="cart-item-holder">
+    @foreach (BasketItemVM basketItem in Model)
+    {
+        total += basketItem.SubTotal;
+        <li class="cart_product">
+            <div>
+                <p>@basketItem.Name</p>
+                <p>@basketItem.Count*@basketItem.Price</p>
+            </div>
+            <a asp-controller="Basket" asp-action="Delete" class="delete-button text-danger"><i class="fas fa-trash fa-fw"></i></a>
+        </li>
+    }
+</ul>

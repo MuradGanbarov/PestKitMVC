@@ -2,13 +2,16 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using PestKit.Areas.PestKitAdmin.Models.Utilites.Extensions;
 using PestKit.Areas.PestKitAdmin.ViewModels;
 using PestKit.DAL;
 using PestKit.Models;
+using PestKit.Utilites.Enums;
 
 namespace PestKit.Areas.PestKitAdmin.Controllers
 {
     [Area("PestKitAdmin")]
+    [AuthorizeRoles(UserRoles.Admin, UserRoles.Moderator)]
     public class TagController : Controller
     {
         private readonly AppDbContext _context;
@@ -24,7 +27,7 @@ namespace PestKit.Areas.PestKitAdmin.Controllers
             List<Tag> tags = await _context.Tags.ToListAsync();
             return View(tags);
         }
-
+        [AuthorizeRoles(UserRoles.Admin, UserRoles.Moderator)]
         public IActionResult Create()
         {
             return View();
@@ -52,7 +55,7 @@ namespace PestKit.Areas.PestKitAdmin.Controllers
             return RedirectToAction(nameof(Index));
 
         }
-
+        [AuthorizeRoles(UserRoles.Admin)]
         public async Task<IActionResult> Delete(int id)
         {
             if (id <= 0) return BadRequest();
@@ -68,7 +71,7 @@ namespace PestKit.Areas.PestKitAdmin.Controllers
             return RedirectToAction(nameof(Index));
 
         }
-
+        [AuthorizeRoles(UserRoles.Admin, UserRoles.Moderator)]
         public async Task<IActionResult> Update(int id)
         {
             if(id<=0) return BadRequest();

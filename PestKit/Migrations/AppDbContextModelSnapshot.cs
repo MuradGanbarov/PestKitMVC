@@ -269,6 +269,41 @@ namespace PestKit.Migrations
                     b.ToTable("Authors");
                 });
 
+            modelBuilder.Entity("PestKit.Models.BasketItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("AppUserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("Count")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("OrderId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AppUserId");
+
+                    b.HasIndex("OrderId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("BasketItems");
+                });
+
             modelBuilder.Entity("PestKit.Models.Blog", b =>
                 {
                     b.Property<int>("Id")
@@ -398,6 +433,34 @@ namespace PestKit.Migrations
                     b.ToTable("Employees");
                 });
 
+            modelBuilder.Entity("PestKit.Models.Order", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("AppUserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("PurchaseAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool?>("Status")
+                        .HasColumnType("bit");
+
+                    b.Property<decimal>("TotalPrice")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AppUserId");
+
+                    b.ToTable("Orders");
+                });
+
             modelBuilder.Entity("PestKit.Models.Position", b =>
                 {
                     b.Property<int>("Id")
@@ -413,6 +476,39 @@ namespace PestKit.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Positions");
+                });
+
+            modelBuilder.Entity("PestKit.Models.Product", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("AppUserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Img")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AppUserId");
+
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("PestKit.Models.Project", b =>
@@ -475,6 +571,44 @@ namespace PestKit.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Tags");
+                });
+
+            modelBuilder.Entity("PestKit.ViewModels.BasketItemVM", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("AppUserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int?>("Count")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Img")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal?>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal?>("SubTotal")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AppUserId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("BasketItemVM");
                 });
 
             modelBuilder.Entity("AuthorBlog", b =>
@@ -543,6 +677,31 @@ namespace PestKit.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("PestKit.Models.BasketItem", b =>
+                {
+                    b.HasOne("PestKit.Models.AppUser", "AppUser")
+                        .WithMany()
+                        .HasForeignKey("AppUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("PestKit.Models.Order", "Order")
+                        .WithMany("BasketItems")
+                        .HasForeignKey("OrderId");
+
+                    b.HasOne("PestKit.Models.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AppUser");
+
+                    b.Navigation("Order");
+
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("PestKit.Models.BlogTag", b =>
                 {
                     b.HasOne("PestKit.Models.Blog", "blog")
@@ -581,6 +740,24 @@ namespace PestKit.Migrations
                     b.Navigation("Position");
                 });
 
+            modelBuilder.Entity("PestKit.Models.Order", b =>
+                {
+                    b.HasOne("PestKit.Models.AppUser", "AppUser")
+                        .WithMany()
+                        .HasForeignKey("AppUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AppUser");
+                });
+
+            modelBuilder.Entity("PestKit.Models.Product", b =>
+                {
+                    b.HasOne("PestKit.Models.AppUser", null)
+                        .WithMany("Products")
+                        .HasForeignKey("AppUserId");
+                });
+
             modelBuilder.Entity("PestKit.Models.ProjectImages", b =>
                 {
                     b.HasOne("PestKit.Models.Project", "Project")
@@ -592,6 +769,28 @@ namespace PestKit.Migrations
                     b.Navigation("Project");
                 });
 
+            modelBuilder.Entity("PestKit.ViewModels.BasketItemVM", b =>
+                {
+                    b.HasOne("PestKit.Models.AppUser", null)
+                        .WithMany("BasketItems")
+                        .HasForeignKey("AppUserId");
+
+                    b.HasOne("PestKit.Models.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("PestKit.Models.AppUser", b =>
+                {
+                    b.Navigation("BasketItems");
+
+                    b.Navigation("Products");
+                });
+
             modelBuilder.Entity("PestKit.Models.Blog", b =>
                 {
                     b.Navigation("BlogTags");
@@ -600,6 +799,11 @@ namespace PestKit.Migrations
             modelBuilder.Entity("PestKit.Models.Department", b =>
                 {
                     b.Navigation("Employees");
+                });
+
+            modelBuilder.Entity("PestKit.Models.Order", b =>
+                {
+                    b.Navigation("BasketItems");
                 });
 
             modelBuilder.Entity("PestKit.Models.Position", b =>

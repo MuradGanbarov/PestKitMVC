@@ -2,12 +2,13 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using PestKit.DAL;
 using PestKit.Models;
+using PestKit.Services;
 using System;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AppDbContext>(opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
-
+builder.Services.AddScoped<LayoutService>();
 builder.Services.AddIdentity<AppUser, IdentityRole>(options => { options.Password.RequiredLength = 8;
     options.Password.RequireNonAlphanumeric = false;
     options.Password.RequireDigit = true;
@@ -23,10 +24,10 @@ builder.Services.AddIdentity<AppUser, IdentityRole>(options => { options.Passwor
 }).AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
 
 var app = builder.Build();
+app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 app.UseStaticFiles();
-app.UseRouting();
 
 app.MapControllerRoute(
    name: "areas",

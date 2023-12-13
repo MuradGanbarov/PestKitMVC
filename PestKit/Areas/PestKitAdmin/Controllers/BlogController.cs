@@ -1,13 +1,16 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using PestKit.Areas.PestKitAdmin.Models.Utilites.Extensions;
 using PestKit.Areas.PestKitAdmin.ViewModels;
 using PestKit.DAL;
 using PestKit.Models;
+using PestKit.Utilites.Enums;
 using System.Threading.Tasks.Dataflow;
 
 namespace PestKit.Areas.PestKitAdmin.Controllers
 {
     [Area("PestKitAdmin")]
+    [AuthorizeRoles(UserRoles.Admin, UserRoles.Moderator)]
     public class BlogController : Controller
     {
         private readonly AppDbContext _context;
@@ -21,7 +24,7 @@ namespace PestKit.Areas.PestKitAdmin.Controllers
             List<Blog> blogs = _context.Blogs.Include(b => b.BlogTags).ThenInclude(bt => bt.Tag).ToList();
             return View(blogs);
         }
-
+        [AuthorizeRoles(UserRoles.Admin, UserRoles.Moderator)]
         public async Task<IActionResult> Create()
         {
             CreateBlogVM blogVM = new CreateBlogVM

@@ -40,8 +40,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGVzdEtpdEFkbWluXFZpZXdzXEJsb2dcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Murad/Desktop/PestKit/PestKit/Areas/PestKitAdmin/Views/Employee/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGVzdEtpdEFkbWluXFZpZXdzXEVtcGxveWVlXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Murad/Desktop/PestKit/PestKit/Areas/PestKitAdmin/Views/Employee/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGVzdEtpdEFkbWluXFZpZXdzXEVtcGxveWVlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Murad/Desktop/PestKit/PestKit/Areas/PestKitAdmin/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGVzdEtpdEFkbWluXFZpZXdzXEhvbWVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Murad/Desktop/PestKit/PestKit/Areas/PestKitAdmin/Views/Product/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGVzdEtpdEFkbWluXFZpZXdzXFByb2R1Y3RcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Murad/Desktop/PestKit/PestKit/Areas/PestKitAdmin/Views/Product/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGVzdEtpdEFkbWluXFZpZXdzXFByb2R1Y3RcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Murad/Desktop/PestKit/PestKit/Areas/PestKitAdmin/Views/Project/Create.cshtml]
@@ -84,12 +100,28 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGVzdEtpdEFkbWluXFZpZXdzXF9WaWV3U3RhcnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Murad/Desktop/PestKit/PestKit/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Murad/Desktop/PestKit/PestKit/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Murad/Desktop/PestKit/PestKit/Views/Basket/Checkout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFza2V0XENoZWNrb3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Murad/Desktop/PestKit/PestKit/Views/Basket/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFza2V0XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Murad/Desktop/PestKit/PestKit/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Murad/Desktop/PestKit/PestKit/Views/Product/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Murad/Desktop/PestKit/PestKit/Views/Project/Detail.cshtml]
@@ -98,6 +130,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Murad/Desktop/PestKit/PestKit/Views/Project/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Murad/Desktop/PestKit/PestKit/Views/Shared/BasketItemPartialView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEJhc2tldEl0ZW1QYXJ0aWFsVmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Murad/Desktop/PestKit/PestKit/Views/Shared/ProductPartialView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFByb2R1Y3RQYXJ0aWFsVmlldy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Murad/Desktop/PestKit/PestKit/Views/Shared/_Layout.cshtml]

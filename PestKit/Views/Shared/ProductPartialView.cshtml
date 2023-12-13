@@ -1,0 +1,30 @@
+﻿
+@using PestKit.ViewModels;
+@using PestKit.Services;
+@inject LayoutService service
+@{
+    decimal? total = 0;
+}
+<div class="offcanvas offcanvas-end" id="minicart">
+    <div class="offcanvas-header">
+        <h1 class="offcanvas-title">Cart</h1>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+        <ul>
+            @foreach(BasketItemVM basketItem in await service.GetBasketItemsAsync())
+            {
+                total += basketItem.Count * basketItem.Price;
+                
+                <li class="cart_product">
+                <div>
+                    <p>Product Name: @basketItem.Name</p>
+                    <p>@basketItem.Count x $@basketItem.Price</p>
+                </div>
+                <button class="delete-button text-danger"><i class="fas fa-trash fa-fw"></i></button>
+            </li>
+            }
+        </ul>
+        <p>Subtotal: $@total</p>
+    </div>
+</div>

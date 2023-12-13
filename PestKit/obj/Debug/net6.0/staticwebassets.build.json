@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "r4Z3Pa8WMJHORR5JL0PO8KBbYlz/J8vCOS6sLO0ATEA=",
+  "Hash": "AmYWVUTrGYXuGZw+ZZoc5nZnJh1Ciou6TVJ13odJo8A=",
   "Source": "PestKit",
   "BasePath": "_content/PestKit",
   "Mode": "Default",
@@ -1598,6 +1598,23 @@
       "OriginalItemSpec": "wwwroot\\img\\04683d04-845e-4167-9a9d-7a33f3b91840.jpg"
     },
     {
+      "Identity": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\wwwroot\\img\\06b7dcec-42b2-4263-b890-690bde2f0828.jpg",
+      "SourceId": "PestKit",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\wwwroot\\",
+      "BasePath": "_content/PestKit",
+      "RelativePath": "img/06b7dcec-42b2-4263-b890-690bde2f0828.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\06b7dcec-42b2-4263-b890-690bde2f0828.jpg"
+    },
+    {
       "Identity": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\wwwroot\\img\\0af2bd5d-2b69-45da-8dde-f949501e2caf.jpg",
       "SourceId": "PestKit",
       "SourceType": "Discovered",
@@ -1717,6 +1734,23 @@
       "OriginalItemSpec": "wwwroot\\img\\12d1f93b-1d9f-4919-a933-dee2c0af525a.jpg"
     },
     {
+      "Identity": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\wwwroot\\img\\143b2045-6d23-4e30-89e4-aeaf66d3606f.jpg",
+      "SourceId": "PestKit",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\wwwroot\\",
+      "BasePath": "_content/PestKit",
+      "RelativePath": "img/143b2045-6d23-4e30-89e4-aeaf66d3606f.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\143b2045-6d23-4e30-89e4-aeaf66d3606f.jpg"
+    },
+    {
       "Identity": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\wwwroot\\img\\23ac0371-7115-47ec-a681-fea7726fd44a.jpg",
       "SourceId": "PestKit",
       "SourceType": "Discovered",
@@ -1749,6 +1783,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\258dca79-9424-40bf-bd31-e4243a21147b.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\wwwroot\\img\\29f4b7b9-4cd9-4f49-b055-2de9a93db099.jpg",
+      "SourceId": "PestKit",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\wwwroot\\",
+      "BasePath": "_content/PestKit",
+      "RelativePath": "img/29f4b7b9-4cd9-4f49-b055-2de9a93db099.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\29f4b7b9-4cd9-4f49-b055-2de9a93db099.jpg"
     },
     {
       "Identity": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\wwwroot\\img\\30463871-63e9-4930-b05f-88104b5d9306.jpg",
@@ -1819,6 +1870,23 @@
       "OriginalItemSpec": "wwwroot\\img\\36031dc4-3b5f-4f54-b434-afb5cb2586ee.jpg"
     },
     {
+      "Identity": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\wwwroot\\img\\3955f13f-6210-41cc-ad28-0f2a2b8e8667.jpg",
+      "SourceId": "PestKit",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\wwwroot\\",
+      "BasePath": "_content/PestKit",
+      "RelativePath": "img/3955f13f-6210-41cc-ad28-0f2a2b8e8667.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\3955f13f-6210-41cc-ad28-0f2a2b8e8667.jpg"
+    },
+    {
       "Identity": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\wwwroot\\img\\39ee66f4-a2d8-4358-bdc4-e13bad2df52d.jpg",
       "SourceId": "PestKit",
       "SourceType": "Discovered",
@@ -1851,6 +1919,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\3a437735-f8a4-4389-95ff-87501def40f3.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\wwwroot\\img\\3ae09cf4-81e5-40e4-a1db-844201d98d27.jpg",
+      "SourceId": "PestKit",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\wwwroot\\",
+      "BasePath": "_content/PestKit",
+      "RelativePath": "img/3ae09cf4-81e5-40e4-a1db-844201d98d27.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\3ae09cf4-81e5-40e4-a1db-844201d98d27.jpg"
     },
     {
       "Identity": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\wwwroot\\img\\3b6163a4-4058-4c0d-abee-47250162659a.jpg",
@@ -1902,6 +1987,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\3e859310-ccdd-46fb-9ce2-4aecf5652a84.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\wwwroot\\img\\4865cace-f84f-4c8b-b11a-8e833018609f.jpg",
+      "SourceId": "PestKit",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\wwwroot\\",
+      "BasePath": "_content/PestKit",
+      "RelativePath": "img/4865cace-f84f-4c8b-b11a-8e833018609f.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\4865cace-f84f-4c8b-b11a-8e833018609f.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\wwwroot\\img\\4b9209b2-30f0-4a9e-9554-0b645e38c7ae.jpg",
+      "SourceId": "PestKit",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\wwwroot\\",
+      "BasePath": "_content/PestKit",
+      "RelativePath": "img/4b9209b2-30f0-4a9e-9554-0b645e38c7ae.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\4b9209b2-30f0-4a9e-9554-0b645e38c7ae.jpg"
     },
     {
       "Identity": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\wwwroot\\img\\547621fb-a97c-4298-b4f4-864817fede5c.jpg",
@@ -1972,6 +2091,23 @@
       "OriginalItemSpec": "wwwroot\\img\\5ff029c4-8339-4427-812e-80eddeb436dc.jpg"
     },
     {
+      "Identity": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\wwwroot\\img\\607b2475-80ec-4db9-b124-3fe986105b2d.jpg",
+      "SourceId": "PestKit",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\wwwroot\\",
+      "BasePath": "_content/PestKit",
+      "RelativePath": "img/607b2475-80ec-4db9-b124-3fe986105b2d.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\607b2475-80ec-4db9-b124-3fe986105b2d.jpg"
+    },
+    {
       "Identity": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\wwwroot\\img\\6159eb39-73e4-4ddb-8b1d-831f745cb41a.jpg",
       "SourceId": "PestKit",
       "SourceType": "Discovered",
@@ -1987,6 +2123,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\6159eb39-73e4-4ddb-8b1d-831f745cb41a.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\wwwroot\\img\\66064cf4-5eee-4656-8d5e-b25aeeef7438.jpg",
+      "SourceId": "PestKit",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\wwwroot\\",
+      "BasePath": "_content/PestKit",
+      "RelativePath": "img/66064cf4-5eee-4656-8d5e-b25aeeef7438.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\66064cf4-5eee-4656-8d5e-b25aeeef7438.jpg"
     },
     {
       "Identity": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\wwwroot\\img\\667ce810-b760-45f9-9e06-03d51ab628f9.jpg",
@@ -2312,6 +2465,40 @@
       "OriginalItemSpec": "wwwroot\\img\\9609966e-e00e-4802-8130-791b23d63704.jpg"
     },
     {
+      "Identity": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\wwwroot\\img\\9c8cded5-07c7-45ea-8aae-dd5761d6c7cb.jpg",
+      "SourceId": "PestKit",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\wwwroot\\",
+      "BasePath": "_content/PestKit",
+      "RelativePath": "img/9c8cded5-07c7-45ea-8aae-dd5761d6c7cb.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\9c8cded5-07c7-45ea-8aae-dd5761d6c7cb.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\wwwroot\\img\\9ca4115c-439c-4c55-ba57-492781b09174.jpg",
+      "SourceId": "PestKit",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\wwwroot\\",
+      "BasePath": "_content/PestKit",
+      "RelativePath": "img/9ca4115c-439c-4c55-ba57-492781b09174.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\9ca4115c-439c-4c55-ba57-492781b09174.jpg"
+    },
+    {
       "Identity": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\wwwroot\\img\\9eebcad9-0d19-408f-a621-46f2c5695518.jpg",
       "SourceId": "PestKit",
       "SourceType": "Discovered",
@@ -2327,6 +2514,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\9eebcad9-0d19-408f-a621-46f2c5695518.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\wwwroot\\img\\9ff78138-ca39-4e47-a4ae-395221b70f5b.jpg",
+      "SourceId": "PestKit",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\wwwroot\\",
+      "BasePath": "_content/PestKit",
+      "RelativePath": "img/9ff78138-ca39-4e47-a4ae-395221b70f5b.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\9ff78138-ca39-4e47-a4ae-395221b70f5b.jpg"
     },
     {
       "Identity": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\wwwroot\\img\\a077c18e-6378-4e5f-a93f-cb8c60c815da.jpg",
@@ -2516,23 +2720,6 @@
       "OriginalItemSpec": "wwwroot\\img\\adf11003-d1dd-4e7b-80b3-15cbd9d10246.jpg"
     },
     {
-      "Identity": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\wwwroot\\img\\ae287432-e11f-44ce-a3f9-ff0ae11d8cfd.jpg",
-      "SourceId": "PestKit",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\wwwroot\\",
-      "BasePath": "_content/PestKit",
-      "RelativePath": "img/ae287432-e11f-44ce-a3f9-ff0ae11d8cfd.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\ae287432-e11f-44ce-a3f9-ff0ae11d8cfd.jpg"
-    },
-    {
       "Identity": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\wwwroot\\img\\ae532636-3368-455d-912d-d151d8d45057.jpg",
       "SourceId": "PestKit",
       "SourceType": "Discovered",
@@ -2565,6 +2752,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\b13117d7-fa9f-4481-947c-58fb3a1c8ae0.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\wwwroot\\img\\b179fe37-9221-453a-b916-1c58b8030bc9.jpg",
+      "SourceId": "PestKit",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\wwwroot\\",
+      "BasePath": "_content/PestKit",
+      "RelativePath": "img/b179fe37-9221-453a-b916-1c58b8030bc9.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\b179fe37-9221-453a-b916-1c58b8030bc9.jpg"
     },
     {
       "Identity": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\wwwroot\\img\\b6857448-22f2-49b0-9a85-94d50e916988.jpg",
@@ -2873,6 +3077,23 @@
       "OriginalItemSpec": "wwwroot\\img\\d5250c6c-fa6d-46ae-8fb8-9b1f698db404.jpg"
     },
     {
+      "Identity": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\wwwroot\\img\\d901941d-2689-4a53-8cc6-f1b85a2e2326.jpg",
+      "SourceId": "PestKit",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\wwwroot\\",
+      "BasePath": "_content/PestKit",
+      "RelativePath": "img/d901941d-2689-4a53-8cc6-f1b85a2e2326.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\d901941d-2689-4a53-8cc6-f1b85a2e2326.jpg"
+    },
+    {
       "Identity": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\wwwroot\\img\\da340d4a-c864-439a-80dd-05199ca03141.jpg",
       "SourceId": "PestKit",
       "SourceType": "Discovered",
@@ -2907,6 +3128,23 @@
       "OriginalItemSpec": "wwwroot\\img\\db41dc46-5eba-4992-a217-2b66bcfd38cd.jpg"
     },
     {
+      "Identity": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\wwwroot\\img\\dc15d8cf-3231-4529-b72d-c3c8fb6c67fd.jpg",
+      "SourceId": "PestKit",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\wwwroot\\",
+      "BasePath": "_content/PestKit",
+      "RelativePath": "img/dc15d8cf-3231-4529-b72d-c3c8fb6c67fd.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\dc15d8cf-3231-4529-b72d-c3c8fb6c67fd.jpg"
+    },
+    {
       "Identity": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\wwwroot\\img\\dcf8f2b9-09a0-46e1-a5e8-1e8fb3a382aa.jpg",
       "SourceId": "PestKit",
       "SourceType": "Discovered",
@@ -2939,6 +3177,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\e4b8c76f-9ebb-45e2-b904-9c6e3ffa4ba8.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\wwwroot\\img\\e4e8e2a5-685e-4ce8-b2c7-37a03ba927ab.jpg",
+      "SourceId": "PestKit",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\wwwroot\\",
+      "BasePath": "_content/PestKit",
+      "RelativePath": "img/e4e8e2a5-685e-4ce8-b2c7-37a03ba927ab.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\e4e8e2a5-685e-4ce8-b2c7-37a03ba927ab.jpg"
     },
     {
       "Identity": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\wwwroot\\img\\eebb801c-ab28-4bf5-8d1b-0a439b9f5a5a.jpg",
@@ -3296,6 +3551,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\testimonial-4.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\wwwroot\\js\\Custom.js",
+      "SourceId": "PestKit",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\wwwroot\\",
+      "BasePath": "_content/PestKit",
+      "RelativePath": "js/Custom.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Custom.js"
     },
     {
       "Identity": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\wwwroot\\js\\main.js",

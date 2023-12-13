@@ -9,9 +9,6 @@ namespace PestKit.Models
         
         public List<ProjectImages>? ProjectImages { get; set; }
 
-        public static implicit operator Project?(Author? v)
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }

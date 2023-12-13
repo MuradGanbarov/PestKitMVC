@@ -1,13 +1,16 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using PestKit.Areas.PestKitAdmin.Models.Utilites.Extensions;
 using PestKit.Areas.PestKitAdmin.ViewModels;
 using PestKit.DAL;
 using PestKit.Models;
+using PestKit.Utilites.Enums;
 using System.ComponentModel;
 
 namespace PestKit.Areas.PestKitAdmin.Controllers
 {
     [Area("PestKitAdmin")]
+    [AuthorizeRolesAttribute(UserRoles.Admin,UserRoles.Moderator)]
     public class AuthorController : Controller
     {
         private readonly AppDbContext _context;
@@ -17,15 +20,26 @@ namespace PestKit.Areas.PestKitAdmin.Controllers
             _context = context;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page)
         {
-            List<Author> authors = await _context.Authors.ToListAsync();
+            List<Author> authors = await _context.Authors.Skip(page*3).Take(3).ToListAsync();
 
-            return View(authors);
+            double count = await _context.Authors.CountAsync();
+
+            PaginationVM<Author> paginationVM = new PaginationVM<Author>()
+            {
+                CurrentPage = page + 1,
+                TotalPage = Math.Ceiling(count / 3),
+                Items = authors
+            };
+
+
+
+            return View(paginationVM);
         }
 
 
-
+        [AuthorizeRoles(UserRoles.Admin,UserRoles.Moderator)]
         public IActionResult Create()
         {
             return View();
@@ -59,7 +73,7 @@ namespace PestKit.Areas.PestKitAdmin.Controllers
 
         }
 
-
+        [AuthorizeRoles(UserRoles.Admin)]
         public async Task<IActionResult> Delete(int id)
         {
             if (id <= 0) return NotFound();
@@ -70,6 +84,7 @@ namespace PestKit.Areas.PestKitAdmin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        [AuthorizeRoles(UserRoles.Admin, UserRoles.Moderator)]
         public async Task<IActionResult> Update(int id)
         {
             if(id <= 0) return NotFound();

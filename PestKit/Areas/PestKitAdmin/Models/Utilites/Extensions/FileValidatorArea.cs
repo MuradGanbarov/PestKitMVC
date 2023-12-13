@@ -4,9 +4,9 @@ using static PestKit.Areas.PestKitAdmin.Models.Enums.FileTypes;
 
 namespace PestKit.Areas.PestKitAdmin.Models.Utilites.Extensions
 {
-    public static class FileValidator
+    public static class FileValidatorArea
     {
-        public static bool IsValidType(this IFormFile file, FileType type)
+        public static bool IsValidType(this IFormFile file, IFormFile? ımg, FileType type)
         {
             if (type == FileType.Image)
             {

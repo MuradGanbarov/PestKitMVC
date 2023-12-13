@@ -5,12 +5,13 @@ using PestKit.Areas.PestKitAdmin.Models.Utilites.Extensions;
 using PestKit.Areas.PestKitAdmin.ViewModels;
 using PestKit.DAL;
 using PestKit.Models;
-using System.Net.Http.Headers;
+using PestKit.Utilites.Enums;
 using static PestKit.Areas.PestKitAdmin.Models.Enums.FileTypes;
 
 namespace PestKit.Areas.PestKitAdmin.Controllers
 {
     [Area("PestKitAdmin")]
+    [AuthorizeRoles(UserRoles.Admin, UserRoles.Moderator)]
     public class ProjectController : Controller
     {
         private readonly AppDbContext _context;
@@ -27,7 +28,7 @@ namespace PestKit.Areas.PestKitAdmin.Controllers
             List<Project> projects = await _context.Projects.Include(p => p.ProjectImages).ToListAsync();
             return View(projects);
         }
-
+        [AuthorizeRoles(UserRoles.Admin, UserRoles.Moderator)]
         public IActionResult Create()
         {
             return View();
@@ -40,13 +41,13 @@ namespace PestKit.Areas.PestKitAdmin.Controllers
                 return View(projectVM);
             }
 
-            if (!projectVM.MainPhoto.IsValidType(FileType.Image))
+            if (!projectVM.MainPhoto.IsValidType(projectVM.MainPhoto,FileType.Image))
             {
                 ModelState.AddModelError("Photo", "Image tipi uygun deyil");
                 return View(projectVM);
             }
 
-            if (!projectVM.MainPhoto.IsValidSize(5, FileSizes.FileSize.Megabite))
+            if (!projectVM.MainPhoto.IsValidSize(5,FileSizes.FileSize.Megabite))
             {
                 ModelState.AddModelError("Photo", "Image size'i 5 mb'den chox olmali deyil");
                 return View(projectVM);
@@ -65,7 +66,7 @@ namespace PestKit.Areas.PestKitAdmin.Controllers
 
             foreach (IFormFile photo in projectVM.SecondaryPhoto)
             {
-                if (!photo.IsValidType(FileType.Image))
+                if (!photo.IsValidType((IFormFile?)projectVM.SecondaryPhoto,FileType.Image))
                 {
                     TempData["Message"] += $"\n{photo.FileName} file tipi uygun deyil";
 
@@ -87,7 +88,7 @@ namespace PestKit.Areas.PestKitAdmin.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-
+        [AuthorizeRoles(UserRoles.Admin)]
         public async Task<IActionResult> Delete(int id)
         {
             if (id <= 0) return BadRequest();
@@ -104,7 +105,7 @@ namespace PestKit.Areas.PestKitAdmin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-
+        [AuthorizeRoles(UserRoles.Admin, UserRoles.Moderator)]
         public async Task<IActionResult> Detail(int id)
         {
             if (id <= 0) return BadRequest();
@@ -112,7 +113,7 @@ namespace PestKit.Areas.PestKitAdmin.Controllers
             if (project is null) return NotFound();
             return View(project);
         }
-
+        [AuthorizeRoles(UserRoles.Admin, UserRoles.Moderator)]
         public async Task<IActionResult> Update(int id)
         {
             if (id <= 0) return BadRequest();
@@ -143,7 +144,7 @@ namespace PestKit.Areas.PestKitAdmin.Controllers
 
             if (updateVM.MainPhoto is not null)
             {
-                if (!updateVM.MainPhoto.IsValidType(FileType.Image))
+                if (!updateVM.MainPhoto.IsValidType(updateVM.MainPhoto,FileType.Image))
                 {
                     ModelState.AddModelError("Image", "Bele bir type uygun deyil");
                     return View(updateVM);
@@ -162,7 +163,7 @@ namespace PestKit.Areas.PestKitAdmin.Controllers
             {
                 string filename = await updateVM.MainPhoto.CreateAsync(_env.WebRootPath, "img");
                 ProjectImages mainImage = existed.ProjectImages.FirstOrDefault(pi => pi.IsPrimary == true);
-                mainImage.URL.Delete(_env.WebRootPath, "img");
+                mainImage.URL.Delete(_env.WebRootPath,"img");
                 _context.ProjectImages.Remove(mainImage);
                 existed.ProjectImages.Add(new ProjectImages
                 {
@@ -176,14 +177,19 @@ namespace PestKit.Areas.PestKitAdmin.Controllers
                 updateVM.ImageIds = new List<int>();
             }
 
-            Project project = new Project
+            existed.Name = updateVM.Name;
+
+            if (updateVM.ImageIds is null)
             {
-                Name = updateVM.Name,
-                ProjectImages = new List<ProjectImages>(),
-            };
+                List<int> images = new List<int>();
+            }
+            if (updateVM.ProjectImages is null)
+            {
+                List<ProjectImages> projectImages = new List<ProjectImages>();
+            }
 
             List<ProjectImages> removeable = existed.ProjectImages.Where(pi => !updateVM.ImageIds.Exists(imgId => imgId == pi.Id) && pi.IsPrimary == null).ToList();
-            if (updateVM.SecondaryPhoto is not null) return NotFound();
+            
             foreach (ProjectImages image in removeable)
             {
                 image.URL.Delete(_env.WebRootPath, "img");
@@ -194,7 +200,7 @@ namespace PestKit.Areas.PestKitAdmin.Controllers
             {
                 foreach (IFormFile photo in updateVM.SecondaryPhoto ?? new List<IFormFile>())
                 {
-                    if (!photo.IsValidType(FileType.Image))
+                    if (!photo.IsValidType((IFormFile?)updateVM.SecondaryPhoto,FileType.Image))
                     {
                         TempData["Message"] += $"\n{photo.FileName} file tipi uygun deyil";
                         continue;

@@ -1,0 +1,77 @@
+﻿@using PestKit.Utilites.Enums;
+﻿
+@model List<Product>
+
+@{
+    int count = 0;
+}
+
+<div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Products Table</h4>
+                <a asp-controller="product" asp-action="create" class="btn btn-success">Create New Product</a>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>
+                                    No
+                                </th>
+                                <th>
+                                    Name
+                                </th>
+                                <th>
+                                    Description
+                                </th>
+                                <th>
+                                    Photo
+                                </th>
+                                <th>
+                                    Price
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (Product product in Model)
+                            {
+                                count++;
+                                <tr>
+                                    <td>
+                                        @count
+                                    </td>
+                                    <td>
+                                        @product.Name
+                                    </td>
+                                    
+                                    <td>
+                                        <img src="/img/@product.Img" />
+                                    </td>
+                                    
+                                    <td>
+                                        @product.Description
+                                    </td>
+                                    <td>
+                                        @product.Price
+                                    </td>
+                                    <td>
+                                        <a asp-action="update" asp-controller="product" asp-route-id="@product.Id" class="btn btn-warning btn-info"><i class="mdi mdi-pencil"></i></a>
+                                        @if (User.IsInRole(UserRoles.Admin.ToString()))
+                                        {
+                                            <a asp-action="delete" asp-controller="product" asp-route-id="@product.Id" class="btn btn-danger btn-info"><i class="mdi mdi-delete"></i></a>
+                                        }
+                                        <a asp-action="detail" asp-controller="@product" asp-route-id="@product.Id" class="btn btn-success btn-info"><i class="mdi mdi-open-in-new"></i></a>
+                                    </td>
+                                    <td>
+                                    </td>
+
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

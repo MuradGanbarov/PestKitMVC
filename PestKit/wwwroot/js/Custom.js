@@ -1,0 +1,14 @@
+﻿const cartItemHolder = document.querySelector(".cart-item-holder")
+const addToCartButtons = document.querySelectorAll(".add-to-basket");
+
+addToCartButtons.forEach(button => button.addEventListener("click", ev => {
+
+    ev.preventDefault();
+
+    const href = ev.target.getAttribute("href");
+
+    fetch(href).then(res => res.text()).then(data => {
+        cartItemHolder.innerHTML = data;
+    })
+
+}))
