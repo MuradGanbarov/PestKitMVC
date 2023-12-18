@@ -8,7 +8,7 @@
         public DateTime CreateTime { get; set; }
         public int ReplyCount { get; set; }
         public int AuthorId { get; set; }
-        public List<Author>? Authors { get; set; }
+        public Author Author { get; set; }
         public string ImageURL { get; set; }
         public List<BlogTag> BlogTags { get; set; } 
     }
