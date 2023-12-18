@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using PestKit.DAL;
 using PestKit.Interfaces;
+using PestKit.Middlewares;
 using PestKit.Models;
 using PestKit.Services;
 using System;
@@ -31,6 +32,8 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 app.UseStaticFiles();
+
+app.UseMiddleware<GlobalExceptionHandlerMiddleware>();
 
 app.MapControllerRoute(
    name: "areas",

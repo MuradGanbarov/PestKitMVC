@@ -8,5 +8,13 @@ namespace PestKit.Controllers
         {
             return View();
         }
+
+        public IActionResult ErrorPage(string error)
+        {
+            if (error is null) return RedirectToAction(nameof(Index));
+            return View(model: error);
+        }
+
+
     }
 }
