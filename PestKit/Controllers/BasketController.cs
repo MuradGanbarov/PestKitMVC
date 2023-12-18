@@ -4,9 +4,11 @@ using Microsoft.Build.Execution;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using PestKit.DAL;
+using PestKit.Interfaces;
 using PestKit.Models;
 using PestKit.Services;
 using PestKit.ViewModels;
+using Pronia.Utilites.Enums;
 using System.Collections.Generic;
 using System.Security.Claims;
 
@@ -16,19 +18,21 @@ namespace PestKit.Controllers
     {
         private readonly UserManager<AppUser> _userManager;
         private readonly LayoutService _service;
+        private readonly IEmailService _emailService;
         private readonly AppDbContext _context;
-        public BasketController(AppDbContext context, UserManager<AppUser> userManager, LayoutService service)
+        public BasketController(AppDbContext context, UserManager<AppUser> userManager, LayoutService service, IEmailService emailService)
         {
             _context = context;
             _userManager = userManager;
             _service = service;
+            _emailService = emailService;
         }
         public async Task<IActionResult> Index()
         {
             List<BasketItemVM> basketVM = new();
             if (User.Identity.IsAuthenticated)
             {
-                AppUser? user = await _userManager.Users.Include(u => u.Products).FirstOrDefaultAsync(u => u.Id == User.FindFirstValue(ClaimTypes.NameIdentifier));
+                AppUser? user = await _userManager.Users.Include(u => u.BasketItems.Where(bi=>bi.OrderId==null)).ThenInclude(bi=>bi.Product).FirstOrDefaultAsync(u => u.Id == User.FindFirstValue(ClaimTypes.NameIdentifier));
                 if (user is null) return NotFound();
                 foreach (var item in user.BasketItems)
                 {
@@ -117,16 +121,15 @@ namespace PestKit.Controllers
             {
                 AppUser user = await _userManager.Users.Include(u => u.BasketItems.Where(bi => bi.OrderId == null)).FirstOrDefaultAsync(u => u.Id == User.FindFirst(ClaimTypes.NameIdentifier).Value);
                 if (user is null) return NotFound();
-                BasketItem item = user.BasketItems.FirstOrDefault(b => b.ProductId == id);
+                BasketItem item = user.BasketItems.FirstOrDefault(b => b.ProductId == id && b.AppUserId==User.FindFirstValue(ClaimTypes.NameIdentifier));
                 if (item is null)
                 {
                     item = new BasketItem
                     {
-                        AppUserId = user.Id,
+                        AppUserId = User.FindFirstValue(ClaimTypes.NameIdentifier),
                         ProductId = product.Id,
-                        Price = product.Price,
                         Count = 1,
-                        OrderId = null,
+                        
                     };
 
                     await _context.BasketItems.AddAsync(item);
@@ -138,6 +141,7 @@ namespace PestKit.Controllers
 
                 }
                 await _context.SaveChangesAsync();
+               
             }
 
             else
@@ -188,7 +192,7 @@ namespace PestKit.Controllers
         {
             if (User.Identity.IsAuthenticated)
             {
-                AppUser user = await _userManager.Users.Include(u => u.BasketItems.Where(bi => bi.OrderId == null)).ThenInclude(bi => bi.Product).FirstOrDefaultAsync(u => u.Id == User.FindFirstValue(ClaimTypes.NameIdentifier));
+                AppUser? user = await _userManager.Users.Include(u => u.BasketItems.Where(bi => bi.OrderId == null)).ThenInclude(bi => bi.Product).FirstOrDefaultAsync(u => u.Id == User.FindFirstValue(ClaimTypes.NameIdentifier));
                 OrderVM orderVM = new()
                 {
                     BasketItems = user.BasketItems,
@@ -204,21 +208,20 @@ namespace PestKit.Controllers
             }
 
         }
-
         [HttpPost]
-
         public async Task<IActionResult> Checkout(OrderVM orderVM)
         {
-            AppUser user = await _userManager.Users.Include(u => u.BasketItems.Where(bi => bi.OrderId == null)).ThenInclude(bi => bi.Product).FirstOrDefaultAsync(bi => bi.Id == User.FindFirstValue(ClaimTypes.NameIdentifier));
 
-            if(!ModelState.IsValid)
+            AppUser? user = await _userManager.Users.Include(u => u.BasketItems.Where(bi => bi.Order == null)).ThenInclude(bi => bi.Product).FirstOrDefaultAsync(u => u.Id == User.FindFirstValue(ClaimTypes.NameIdentifier));
+
+            if (!ModelState.IsValid)
             {
                 orderVM.BasketItems = user.BasketItems;
                 return View(orderVM);
             }
-
+            
             decimal total = 0;
-            foreach(BasketItem item in user.BasketItems)
+            foreach (BasketItem item in user.BasketItems)
             {
                 item.Price = item.Product.Price;
                 total += item.Count * item.Price;
@@ -227,19 +230,48 @@ namespace PestKit.Controllers
             Order order = new()
             {
                 Status = null,
-                A
+                Address = orderVM.Address,
+                PurchaseAt = DateTime.Now,
+                AppUserId = user.Id,
+                BasketItems = user.BasketItems,
+                TotalPrice = total,
             };
 
+            await _context.Orders.AddAsync(order);
+            await _context.SaveChangesAsync();
+            string body = @"<table border=""1"">
+                           <thead>
+                              <tr>    
+                                    <th>Name</th>    
+                                    <th>Price</th>    
+                                    <th>Count</th>    
+                                </tr>    
+                            </thead>
+                            <tbody>";
+            foreach (var item in order.BasketItems)
+            {
+                body += @$" <tr>
+                                    <td>{item.Product.Name}</td>
+                                    <td>{item.Price}</td>
+                                    <td>{item.Count}</td>
+                            </tr>";
+
+            }
+
+            body += @"</tbody>
+                  </table>";
+
+            await _emailService.SendMailAsync(user.Email, "Your Order", body, true);
+
+            return RedirectToAction(nameof(Index), "Home");
 
 
 
         }
 
-
-
+        
 
 
     }
 }
-
 

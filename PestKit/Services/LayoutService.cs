@@ -31,7 +31,7 @@ namespace PestKit.Services
             if (_contextAccessor.HttpContext.User.Identity.IsAuthenticated)
             {
 
-                var user = await _userManager.Users.
+                AppUser? user = await _userManager.Users.
                     Include(u => u.BasketItems.Where(bi => bi.OrderId == null)).
                     ThenInclude(bi => bi.Product).
                     FirstOrDefaultAsync(u => u.Id == _contextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier));
@@ -128,7 +128,6 @@ namespace PestKit.Services
 
             return bilist;
         }
-
 
 
     }

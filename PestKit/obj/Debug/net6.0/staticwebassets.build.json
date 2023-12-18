@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "AmYWVUTrGYXuGZw+ZZoc5nZnJh1Ciou6TVJ13odJo8A=",
+  "Hash": "anFFCUxLbGv5FVxLs6Y9rUB//SaY3BLhN6hl0rOa2Es=",
   "Source": "PestKit",
   "BasePath": "_content/PestKit",
   "Mode": "Default",
@@ -3075,6 +3075,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\d5250c6c-fa6d-46ae-8fb8-9b1f698db404.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\wwwroot\\img\\d844a9d2-cb4a-4a83-a371-e70da1d34181.jpg",
+      "SourceId": "PestKit",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\wwwroot\\",
+      "BasePath": "_content/PestKit",
+      "RelativePath": "img/d844a9d2-cb4a-4a83-a371-e70da1d34181.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\d844a9d2-cb4a-4a83-a371-e70da1d34181.jpg"
     },
     {
       "Identity": "C:\\Users\\Murad\\Desktop\\PestKit\\PestKit\\wwwroot\\img\\d901941d-2689-4a53-8cc6-f1b85a2e2326.jpg",

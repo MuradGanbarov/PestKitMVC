@@ -10,8 +10,6 @@
     <Folder Include="Areas\PestKitAdmin\Data\" />
     <Folder Include="Areas\PestKitAdmin\ViewModels\Department\" />
     <Folder Include="Areas\PestKitAdmin\Views\Departments\" />
-    <Folder Include="Areas\PestKitAdmin\Views\Positions\" />
-    <Folder Include="Views\Employee\" />
   </ItemGroup>
 
   <ItemGroup>

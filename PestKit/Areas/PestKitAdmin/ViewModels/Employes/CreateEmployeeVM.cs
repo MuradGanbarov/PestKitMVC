@@ -19,7 +19,7 @@ namespace PestKit.Areas.PestKitAdmin.ViewModels.Employes
         [MaxLength(25)]
         public string LastName { get; set; }
         public int PositionId { get; set; }
-        public List<Position>? Positions { get; set; }
+        public List<Position> MyProperty { get; set; }
         public int DepartmentId { get; set; }
         public List<Department>? Departments { get; set; }
         public string Facebook { get; set; }

@@ -35,7 +35,7 @@ namespace PestKit.Areas.PestKitAdmin.Controllers
             CreateEmployeeVM employeeVM = new()
             {
                 Departments = await _context.Departments.ToListAsync(),
-                Positions = await _context.Positions.ToListAsync()
+                //Positions = await _context.Positions.ToListAsync()
 
             };
             return View(employeeVM);
